@@ -1,0 +1,441 @@
+/* ---------------------- body START -------------------------------------- */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #262735;
+}
+/* ---------------------- body END -------------------------------------- */
+
+/* ---------------------- Navigation START -------------------------------------- */
+.bk-nav,
+.text-shadow {
+  color: white;
+  text-shadow: 6px 6px 12px rgba(0, 0, 0, 1), 0 0 25px rgba(0, 0, 0, 1),
+    0 0 5px rgba(0, 0, 0, 1);
+}
+
+.bk-nav,
+.text-green {
+  color: green;
+}
+/* ---------------------- Navigation END -------------------------------------- */
+
+/* ---------------------- Filter Panels START  -------------------------------------- */
+.bk-filter,
+.filter-section,
+.panels.row {
+  display: flex;
+  background-color: #323447;
+}
+
+.bk-filter,
+.filter-section-Upazila-Union-reset-card,
+.card {
+  color: white;
+  background-color: #323447;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  border: none;
+}
+
+.bk-filter,
+.filter-section-district-harmRange-KilnType-divs,
+.dropdown-container {
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  margin: 10px;
+}
+
+/* ---------------------- Filter Panels END  -------------------------------------- */
+
+/* ---------------------- Output Panel START  -------------------------- */
+.bk-output,
+.outputPanel {
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  margin: 10px;
+  min-width: 200px;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+.bk-output,
+.outputPanel .row {
+  flex: 1;
+  display: flex;
+  height: 100%;
+}
+
+.bk-output,
+.outputPanel .row .col {
+  border: 7px solid #3e3f56 !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  margin: 0 5px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+.bk-output,
+.outputPanel .row .district-info {
+  font-size: 1.25rem;
+}
+
+.bk-output,
+.outputPanel .row .kiln-info {
+  font-size: 2rem;
+}
+
+.bk-filter,
+.reset-button {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+/* ---------------------- Output Panel END  -------------------------- */
+
+/* for the panle upper lower */
+/* Filter panel upper/lower sections */
+.bk-filter,
+.filter-section-district-harmRange-KilnType-divs,
+.dropdown-container {
+  min-height: 100%;
+  padding: 10px;
+}
+
+.bk-filter,
+.filter-section-district-harmRange-KilnType,
+.left-upper-panel {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.bk-filter,
+.filter-section-Upazila-Union-reset,
+.left-lower-panel {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.bk-filter,
+.dropdown {
+  flex: 1;
+  max-width: 200px;
+}
+.bk-filter,
+#resetZoom {
+  margin-top: 10px;
+}
+
+/* Output panel */
+.outputPanel {
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  margin: 10px;
+  min-width: 200px;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ensure row takes full height */
+.outputPanel .row {
+  flex: 1;
+  display: flex;
+  height: 100%;
+}
+
+/* Style the borders and stretch .col divs */
+.outputPanel .row .col {
+  border: 7px solid #3e3f56 !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  margin: 0 5px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+/* Change text size for p elements inside .col */
+.outputPanel .row .col p {
+  font-size: 1.25rem; /* Equivalent to fs-4 */
+}
+
+/* ---------------------- MAP START ---------------------------------------- */
+.bk-map,
+#map {
+  height: 100%;
+  width: 100%;
+}
+/* ---------------------- MAP END ---------------------------------------- */
+
+/* ---------------------- TABLE START ---------------------------------------- */
+.bk-table,
+.table-Filtered,
+.sidebar {
+  min-height: 500px;
+  max-height: 100px;
+  overflow-y: auto;
+  overflow-x: auto;
+}
+
+/* Table styles */
+.bk-table,
+.mapClass table.table {
+  background-color: #323447 !important;
+  color: #ffffff;
+  border-color: #3e3f56 !important;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+.bk-table,
+.mapClass table.table th {
+  background-color: #3e3f56 !important;
+  color: #ffffff;
+  border-color: #3e3f56 !important;
+  position: sticky;
+  top: -1px;
+  z-index: 10;
+}
+
+.bk-table,
+.mapClass table.table td {
+  background-color: #323447 !important;
+  color: #ffffff;
+  border-color: #3e3f56 !important;
+}
+
+.bk-table,
+.mapClass table.table.table-bordered {
+  border: 2px solid #3e3f56 !important;
+}
+
+.bk-table,
+.mapClass table.table tbody tr:hover {
+  background-color: #4a4f6b !important;
+}
+/* The google link */
+
+
+.google-map-panel {
+  border-color: #3e3f56 !important;
+  background-color: #3e3f56 !important;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 10px;
+  color: #000;
+}
+
+/* ---------------------- TABLE END ---------------------------------------- */
+
+/* ---------------------- Loading Screen START ---------------------------------------- */
+.bk-loading,
+#loadingScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  transition: opacity 1s ease-in-out;
+}
+
+.bk-loading,
+.loadingScreen-part,
+.chart {
+  background: rgba(255, 255, 255, 0.1);
+  justify-content: flex-start;
+  border-radius: 100px;
+  align-items: center;
+  position: relative;
+  padding: 0 5px;
+  display: flex;
+  height: 40px;
+  width: 700px;
+}
+
+.bk-loading,
+.loadingScreen-bar,
+.bar {
+  box-shadow: 0 10px 40px -10px #fff;
+  border-radius: 100px;
+  background: #fff;
+  height: 30px;
+  width: 0%;
+  transition: width 0.5s ease-in-out;
+}
+
+@keyframes load {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+/* ---------------------- Loading Screen END ---------------------------------------- */
+
+/* ---------------------------------------- Gauge styling STARTS ---------------------------------- */
+/* Gauge wrapper */
+.outputPanel .row .col .wrapper {
+  height: 100px;
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Gauge container */
+.outputPanel .row .col .gauge-container.two {
+  margin: 0;
+  width: 100px; /* Adjust to fit within col */
+  height: 100px;
+}
+
+/* Gauge dial */
+.outputPanel .row .col .gauge-container.two > .gauge .dial {
+  stroke: #334455;
+  stroke-width: 10;
+}
+
+/* Gauge value */
+.outputPanel .row .col .gauge-container.two > .gauge .value {
+  stroke: orange;
+  stroke-dasharray: none;
+  stroke-width: 13;
+}
+
+/* Gauge value text */
+.outputPanel .row .col .gauge-container.two > .gauge .value-text {
+  fill: #ccc;
+  font-weight: 100;
+  font-size: 1em;
+}
+
+/* Gauge label */
+.outputPanel .row .col .gauge-container.two .label {
+  color: #ffffff;
+  font-size: 0.9rem;
+  text-align: center;
+  display: block;
+  margin-top: 5px;
+}
+/* add which wrapper it came from  */
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+  padding: 0.5rem;
+}
+
+.chart-speedo {
+  display: grid;
+  aspect-ratio: 2 / 1;
+  grid-template-areas: "overlap";
+  overflow: clip;
+  --max-value: 1;
+
+  --stop1: 0.2;
+  --stop2: 0.35;
+  --stop3: 0.5;
+  --stop4: 0.7;
+
+  --deg1: calc(var(--stop1) * 0.5turn + 0.25turn);
+  --deg2: calc(var(--stop2) * 0.5turn + 0.25turn);
+  --deg3: calc(var(--stop3) * 0.5turn + 0.25turn);
+  --deg4: calc(var(--stop4) * 0.5turn + 0.25turn);
+
+  width: 100px;
+  height: auto;
+  border-radius: 50%/100% 100% 0 0;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.background {
+  grid-area: overlap;
+  background: conic-gradient(
+    from 180deg at 50% 100%,
+    #ffffff,
+    #ffffff var(--deg1),
+    #fff9a3 var(--deg1),
+    #fff9a3 var(--deg2),
+    #ffc107 var(--deg2),
+    #ffc107 var(--deg3),
+    #f81f1f var(--deg3),
+    #f81f1f var(--deg4),
+    #8b0000 var(--deg4),
+    #8b0000
+  );
+  border-radius: 50%/100% 100% 0 0;
+  mask: radial-gradient(
+    at bottom,
+    transparent,
+    transparent 30%,
+    #000 30%,
+    #000
+  );
+}
+
+.indicator {
+  grid-area: overlap;
+  z-index: 1;
+  position: relative;
+}
+
+.tick {
+  position: absolute;
+  bottom: -1px;
+  left: 50%;
+  transform-origin: center bottom;
+  width: 27px;
+  height: 24px;
+  background: url("images/icon.png") no-repeat center center;
+  background-size: contain;
+  transform: translateX(-50%) rotate(0deg);
+  transition: transform 0.5s ease;
+}
+
+.value-display {
+  grid-area: overlap;
+  position: absolute;
+  bottom: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: #000;
+  font-size: 20px;
+}
+
+.input-box {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.input-box input {
+  padding: 5px 10px;
+  font-size: 16px;
+  width: 120px;
+  text-align: center;
+}
+
+/* ---------------------------------------- Gauge styling ENDS ---------------------------------------- */
+
+/* FOOTER CSS WILL START HERE */

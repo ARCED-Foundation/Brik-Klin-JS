@@ -1,0 +1,40 @@
+CREATE TABLE kiln_harm_data (
+    FID INT,
+    Latitude DECIMAL(10,7),
+    Longitude DECIMAL(10,7),
+    Deaths DECIMAL(10,9),
+    Type_correct VARCHAR(50),
+    `Union` VARCHAR(100),
+    ADM4_PCODE VARCHAR(20),
+    Upazila VARCHAR(100),
+    ADM3_PCODE VARCHAR(20),
+    _ID INT,
+    color VARCHAR(100),
+    District VARCHAR(100),
+    ADM2_PCODE VARCHAR(20),
+    uid INT PRIMARY KEY,
+    Deaths_dup DECIMAL(10,9),
+    health_harm_index_numerical DECIMAL(10,8),
+    NAME VARCHAR(100),
+    metre_to_school FLOAT,
+    metre_to_clinic FLOAT,
+    `1km_school` VARCHAR(10),
+    `1km_clinic` VARCHAR(10),
+    `2km_forest` VARCHAR(10),
+    `1km_pa` VARCHAR(10),
+    `1km_railway` VARCHAR(10),
+    `1km_wetland` VARCHAR(10),
+    google_map TEXT,
+    Division VARCHAR(50),
+    in_paurashava VARCHAR(10),
+    Deaths_10yr DECIMAL(10,9),
+    `Deaths over 10 years` VARCHAR(100),
+    harm_range VARCHAR(100),
+    deaths_10yr_limited DECIMAL(10,9)
+);
+
+SELECT * FROM `kiln_harm_data` WHERE 1;
+
+DELETE FROM `kiln_harm_data`;
+
+DROP TABLE IF EXISTS kiln_harm_data;

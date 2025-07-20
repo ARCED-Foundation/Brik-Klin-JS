@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Brik Klin</title>
+    <meta
+      property="og:description"
+      content="View local GeoJSON from default address."
+    />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/maplibre-gl@5.2.0/dist/maplibre-gl.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script src="https://unpkg.com/maplibre-gl@5.2.0/dist/maplibre-gl.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body class="container-fluid">
+    <!------------------------------------------- Loading Screeen START ----------------------------------------------------->
+    <div id="loadingScreen">
+      <div class="loadingScreen-part chart">
+        <div class="loadingScreen-bar bar" id="progress-bar"></div>
+        <!-- <span id="valueSpan"></span> -->
+      </div>
+    </div>
+    <!------------------------------------------- Loading Screeen END ----------------------------------------------------->
+
+    <!------------------------------------------- MAIN CONTENT ------------------------------------------------------------->
+    <div class="main-content">
+      <!------------------------------------------- Nav Bar Starts here ----------------------------------------------------->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light px-5 rounded-4">
+        <div class="d-flex align-items-center">
+          <img
+            src="images\gov-logo.png"
+            alt="Logo"
+            class="me-2"
+            width="60"
+            height="60"
+          />
+          <a class="navbar-brand" href="#"
+            ><span class="text-green">Department of Environment</span>
+            <p class="text-shadow">
+              Government of the People's Republic of Bangladesh
+            </p></a
+          >
+        </div>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <div class="ms-auto min-width-space font-nav d-flex gap-3">
+            <button class="btn btn-success">Explanatory Note(EN)</button>
+            <button class="btn btn-success">Explanatory Note(BN)</button>
+            <button class="btn btn-success">Data Export</button>
+            <button class="btn btn-success">Upazila Reports</button>
+            <button class="btn btn-danger">Logout</button>
+          </div>
+        </div>
+      </nav>
+      <!------------------------------------------- Nav Bar Ends here ------------------------------------------------------------->
+
+      <!------------------------------------------- Filter Panels Starts here ----------------------------------------------------->
+      <div class="filter-section panels row">
+        <div
+          class="filter-section-district-harmRange-KilnType-divs filter-section-leftside left-pannel col dropdown-container d-flex flex-column justify-content-between align-items-center"
+        >
+          <div
+            class="filter-section-district-harmRange-KilnType left-upper-panel mb-3"
+          >
+            <!-- Select District Filter -->
+            <div class="dropdown p-2 card">
+              <p class="card-title">District</p>
+              <button
+                class="btn btn-secondary dropdown-toggle"
+                type="button"
+                id="districtDropdown"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Select District
+              </button>
+              <ul
+                class="dropdown-menu"
+                aria-labelledby="districtDropdown"
+                id="districtMenu"
+              ></ul>
+            </div>
+            <!-- Select Harm Range Filter-->
+            <div class="dropdown p-2 card">
+              <p class="card-title">Harm Range</p>
+              <button
+                class="btn btn-secondary dropdown-toggle"
+                type="button"
+                id="harmRangeDropdown"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Select Harm Range
+              </button>
+              <ul
+                class="dropdown-menu"
+                aria-labelledby="harmRangeDropdown"
+                id="harmRangeMenu"
+              ></ul>
+            </div>
+            <!-- Select Kiln Type Filter-->
+            <div class="dropdown p-2 card">
+              <p class="card-title">Kiln Type</p>
+              <button
+                class="btn btn-secondary dropdown-toggle"
+                type="button"
+                id="kilnTypeDropdown"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Select Kiln Type
+              </button>
+              <ul
+                class="dropdown-menu"
+                aria-labelledby="kilnTypeDropdown"
+                id="kilnTypeMenu"
+              ></ul>
+            </div>
+          </div>
+
+          <div class="filter-section-Upazila-Union-reset left-lower-panel">
+            <!-- Select Upazila filter-->
+
+            <div
+              class="filter-section-Upazila-Union-reset-card dropdown p-2 col card"
+            >
+              <p class="card-title">Upazila</p>
+              <button
+                class="btn btn-secondary dropdown-toggle"
+                type="button"
+                id="upazilaDropdown"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Select Upazila
+              </button>
+              <ul
+                class="dropdown-menu"
+                aria-labelledby="upazilaDropdown"
+                id="upazilaMenu"
+              ></ul>
+            </div>
+
+            <!-- Select Union filter-->
+            <div class="dropdown p-2 col card">
+              <div class="card-title">Union</div>
+              <button
+                class="btn btn-secondary dropdown-toggle"
+                type="button"
+                id="unionDropdown"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Select Union
+              </button>
+              <ul
+                class="dropdown-menu"
+                aria-labelledby="unionDropdown"
+                id="unionMenu"
+              ></ul>
+            </div>
+
+            <!-- Reset button  -->
+            <button
+              class="reset-button btn btn-secondary rounded-pill"
+              id="resetZoom"
+            >
+              Reset All
+            </button>
+          </div>
+        </div>
+
+        <!------------------------------------------- Filter Panels ENDS here ----------------------------------------------------->
+
+        <!--------------------- Display the filtered result three panels such as District Upazila Union and GAUGE STARTS here ----------------------------------------------------->
+        <div class="outputPanel col"></div>
+
+        <!-- when click on table the google map link pops up code  -->
+        <div
+          class="google-mapLink-popoup google-map-panel alert alert-info alert-dismissible fade d-none"
+          role="alert"
+        >
+          <div id="googleMapContent"></div>
+        </div>
+        <!-- Google pop up link ends -->
+      </div>
+      <!------------------------------------------- Display Panel ENDS here ----------------------------------------------------->
+
+      <!------------------------------------------- MAP AND TABLE STARTS HERE ----------------------------------------------------->
+      <div class="content container-fluid">
+        <div class="row">
+          <div class="table-Filtered mapClass col-4 sidebar bg-light"></div>
+          <div class="JS-MAP col-8">
+            <div id="map"></div>
+          </div>
+        </div>
+      </div>
+
+      <!------------------------------------------- MAP AND TABLE ENDS HERE ----------------------------------------------------->
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
